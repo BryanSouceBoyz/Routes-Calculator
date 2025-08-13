@@ -1,0 +1,188 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Calculadora de Rutas y Costos",
+    "description": "Calcula costos de viaje y sugiere la opción más económica.",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Costs/calculate": {
+      "post": {
+        "tags": [
+          "Costs"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TripInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TripInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TripInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/WeatherForecast": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "operationId": "GetWeatherForecast",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "TripInput": {
+        "required": [
+          "carEfficiencyKmPerGallon",
+          "distanceKm"
+        ],
+        "type": "object",
+        "properties": {
+          "distanceKm": {
+            "minimum": 0,001,
+            "type": "number",
+            "format": "double"
+          },
+          "durationMinutes": {
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          },
+          "publicCarFarePerRide": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "publicCarRidesCount": {
+            "maximum": 2147483647,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          },
+          "uberBaseFare": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "uberPerKm": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "uberPerMinute": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "uberServiceFee": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "uberSurgeMultiplier": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "fuelPricePerGallon": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "carEfficiencyKmPerGallon": {
+            "minimum": 0,001,
+            "type": "number",
+            "format": "double"
+          },
+          "tolls": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "parking": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "maintenancePerKm": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WeatherForecast": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "temperatureC": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "temperatureF": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
