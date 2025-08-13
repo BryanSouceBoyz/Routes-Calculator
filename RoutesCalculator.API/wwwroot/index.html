@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculadora de Rutas y Costos</title>
+  <style>
+    :root {
+      --b:#e5e7eb; --bg:#f8fafc; --ok:#dcfce7; --okb:#16a34a; --err:#ffe8e8; --muted:#6b7280;
+      --fg:#111827; --card:#fff; --accent:#2563eb; --bar:#0ea5e9;
+    }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; background:#fff; color:var(--fg); }
+    h1 { margin: 0 0 6px; }
+    h3 { margin: 12px 0; }
+    .card { border: 1px solid var(--b); border-radius: 12px; padding: 16px; margin-bottom: 18px; background:var(--card); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    label { font-size: 14px; color: #374151; display: block; margin-bottom: 6px; }
+    input[type="number"], input[type="text"], select, textarea {
+      width: 100%; padding: 8px 10px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; background:#fff; color:var(--fg);
+    }
+    textarea { min-height: 60px; resize: vertical; }
+    input:invalid { border-color: #ef4444; }
+    .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .btn { background: var(--accent); color: white; border: none; padding: 10px 14px; border-radius: 10px; cursor: pointer; font-size: 14px; }
+    .btn.secondary { background:#111827; }
+    .btn.ghost { background:#fff; color:#111827; border:1px solid var(--b); }
+    .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    #status { border: 1px solid var(--b); border-radius: 10px; padding: 10px; background: var(--bg); display:none; }
+    #result { display: grid; gap: 12px; }
+    .option { border:1px solid var(--b); border-radius:12px; padding:12px; background:#fff; }
+    .option.best { border-color: var(--okb); background: var(--ok); }
+    .badge { display:inline-block; font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid var(--okb); color:#14532d; background:var(--ok); }
+    .mode { font-weight:600; }
+    .price { font-weight:700; }
+    .muted { color: var(--muted); font-size:12px; }
+    .bar { height: 8px; border-radius: 999px; background: #e5e7eb; overflow: hidden; }
+    .bar > span { display:block; height:100%; background:var(--bar); }
+    .spinner { width:16px; height:16px; border:2px solid #cbd5e1; border-top-color:var(--accent); border-radius:50%; animation: spin .8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .history-list { display: grid; gap: 10px; }
+    .history-item { border:1px solid var(--b); border-radius:10px; padding:10px; display:flex; justify-content:space-between; gap:10px; align-items:center; background:#fff; }
+    .history-meta { display:flex; flex-direction:column; gap:4px; }
+    .tiny { font-size:12px; color:#6b7280; }
+    @media print { #apiCard, #historyCard, .toolbar { display:none; } body { margin:0; } .card { border:0; } }
+
+    /* Modo oscuro */
+    .dark { --b:#374151; --bg:#111827; --ok:#064e3b; --okb:#10b981; --err:#7f1d1d; --muted:#9ca3af; --fg:#e5e7eb; --card:#0b1220; --accent:#2563eb; --bar:#38bdf8; background:#0b1020; color:var(--fg); }
+    .dark input, .dark select, .dark textarea { background:#0f172a; color:#e5e7eb; border-color:#334155; }
+    .dark .card, .dark .history-item, .dark .option { background:#0b1220; }
+    .dark .btn.ghost { background:transparent; color:#e5e7eb; border-color:#334155; }
+  </style>
+</head>
+<body>
+  <h1>Calculadora de Rutas y Costos</h1>
+  <p class="muted">Ajusta la URL del API si tu puerto cambia. Selector de moneda y **historial** incluidos.</p>
+
+  <!-- Configuración -->
+  <div id="apiCard" class="card">
+    <div class="grid">
+      <div>
+        <label for="apiBase">URL del API (https)</label>
+        <input type="text" id="apiBase" value="https://localhost:7140" />
+        <div class="muted">Ejemplo: https://localhost:7140</div>
+      </div>
+      <div>
+        <label for="currency">Moneda (formato visual)</label>
+        <select id="currency">
+          <option value="DOP" selected>RD$ (DOP)</option>
+          <option value="USD">$ (USD)</option>
+          <option value="EUR">€ (EUR)</option>
+          <option value="MXN">$ (MXN)</option>
+          <option value="COP">$ (COP)</option>
+          <option value="ARS">$ (ARS)</option>
+        </select>
+      </div>
+      <div>
+        <label for="autoCalc">Calcular al escribir</label><br/>
+        <input type="checkbox" id="autoCalc" />
+      </div>
+      <div>
+        <label for="darkMode">Modo oscuro</label><br/>
+        <input type="checkbox" id="darkMode" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulario -->
+  <form id="form-costos" class="card" novalidate>
+    <h3>Parámetros</h3>
+    <div class="grid">
+      <div><label for="distanceKm">Distancia (km)</label><input type="number" id="distanceKm" min="0" step="0.01" value="10" required /></div>
+      <div><label for="durationMinutes">Duración (min)</label><input type="number" id="durationMinutes" min="0" step="1" value="20" required /></div>
+      <div><label for="publicCarFarePerRide">Tarifa carro público</label><input type="number" id="publicCarFarePerRide" min="0" step="0.01" value="35" required /></div>
+      <div><label for="publicCarRidesCount">Viajes carro público</label><input type="number" id="publicCarRidesCount" min="0" step="1" value="2" required /></div>
+      <div><label for="uberBaseFare">Uber base</label><input type="number" id="uberBaseFare" min="0" step="0.01" value="40" required /></div>
+      <div><label for="uberPerKm">Uber por km</label><input type="number" id="uberPerKm" min="0" step="0.01" value="15" required /></div>
+      <div><label for="uberPerMinute">Uber por minuto</label><input type="number" id="uberPerMinute" min="0" step="0.01" value="4" required /></div>
+      <div><label for="uberServiceFee">Uber fee</label><input type="number" id="uberServiceFee" min="0" step="0.01" value="10" required /></div>
+      <div><label for="uberSurgeMultiplier">Uber multiplicador</label><input type="number" id="uberSurgeMultiplier" min="0" step="0.01" value="1.00" required /></div>
+      <div><label for="fuelPricePerGallon">Precio galón</label><input type="number" id="fuelPricePerGallon" min="0" step="0.01" value="720" required /></div>
+      <div><label for="carEfficiencyKmPerGallon">Eficiencia (km/gal)</label><input type="number" id="carEfficiencyKmPerGallon" min="0" step="0.01" value="35" required /></div>
+      <div><label for="tolls">Peajes</label><input type="number" id="tolls" min="0" step="0.01" value="0" required /></div>
+      <div><label for="parking">Parqueo</label><input type="number" id="parking" min="0" step="0.01" value="0" required /></div>
+      <div><label for="maintenancePerKm">Mantenimiento/km</label><input type="number" id="maintenancePerKm" min="0" step="0.01" value="3" required /></div>
+      <div><label for="note">Nota (opcional)</label><textarea id="note" placeholder="Ej: ida a la UASD, lluvia, hora pico…"></textarea></div>
+    </div>
+
+    <div class="row" style="margin-top:14px;">
+      <div class="toolbar">
+        <button id="btn-calcular" class="btn" type="submit">Calcular</button>
+        <button id="btn-share" class="btn ghost" type="button">Compartir enlace</button>
+        <button id="btn-print" class="btn ghost" type="button">Imprimir / PDF</button>
+        <button id="btn-save-history" class="btn ghost" type="button">Guardar en historial</button>
+        <button id="btn-copy" class="btn ghost" type="button">Copiar resumen</button>
+        <button id="btn-json" class="btn ghost" type="button">Exportar JSON</button>
+        <button id="btn-reset" class="btn secondary" type="button">Reset</button>
+      </div>
+      <div id="status" class="muted"></div>
+    </div>
+  </form>
+
+  <!-- Resultado -->
+  <div class="card">
+    <h3>Resultado</h3>
+    <div id="result"></div>
+  </div>
+
+  <!-- Historial -->
+  <div id="historyCard" class="card">
+    <div class="row" style="justify-content: space-between;">
+      <h3 style="margin:0;">Historial (últimas comparaciones)</h3>
+      <button id="btn-clear-history" class="btn ghost" type="button">Limpiar historial</button>
+    </div>
+    <div id="historyList" class="history-list"></div>
+    <div id="historyEmpty" class="muted">Aún no hay elementos guardados.</div>
+  </div>
+
+  <script src="/index.js" defer></script>
+</body>
+</html>
