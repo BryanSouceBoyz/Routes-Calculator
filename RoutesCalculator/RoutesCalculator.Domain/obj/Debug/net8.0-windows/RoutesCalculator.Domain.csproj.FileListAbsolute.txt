@@ -1,0 +1,11 @@
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\bin\Debug\net8.0-windows\RoutesCalculator.Domain.deps.json
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\bin\Debug\net8.0-windows\RoutesCalculator.Domain.dll
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\bin\Debug\net8.0-windows\RoutesCalculator.Domain.pdb
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\obj\Debug\net8.0-windows\RoutesCalculator.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\obj\Debug\net8.0-windows\RoutesCalculator.Domain.AssemblyInfoInputs.cache
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\obj\Debug\net8.0-windows\RoutesCalculator.Domain.AssemblyInfo.cs
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\obj\Debug\net8.0-windows\RoutesCalculator.Domain.csproj.CoreCompileInputs.cache
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\obj\Debug\net8.0-windows\RoutesCalculator.Domain.dll
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\obj\Debug\net8.0-windows\refint\RoutesCalculator.Domain.dll
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\obj\Debug\net8.0-windows\RoutesCalculator.Domain.pdb
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\obj\Debug\net8.0-windows\ref\RoutesCalculator.Domain.dll

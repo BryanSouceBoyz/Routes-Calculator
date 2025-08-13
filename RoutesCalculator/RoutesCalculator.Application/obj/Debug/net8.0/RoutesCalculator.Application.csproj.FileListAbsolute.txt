@@ -1,0 +1,15 @@
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Application\bin\Debug\net8.0\RoutesCalculator.Application.deps.json
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Application\bin\Debug\net8.0\RoutesCalculator.Application.dll
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Application\bin\Debug\net8.0\RoutesCalculator.Application.pdb
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Application\bin\Debug\net8.0\RoutesCalculator.Domain.dll
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Application\bin\Debug\net8.0\RoutesCalculator.Domain.pdb
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Application\obj\Debug\net8.0\RoutesCalculator.Application.csproj.AssemblyReference.cache
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Application\obj\Debug\net8.0\RoutesCalculator.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Application\obj\Debug\net8.0\RoutesCalculator.Application.AssemblyInfoInputs.cache
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Application\obj\Debug\net8.0\RoutesCalculator.Application.AssemblyInfo.cs
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Application\obj\Debug\net8.0\RoutesCalculator.Application.csproj.CoreCompileInputs.cache
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Application\obj\Debug\net8.0\RoutesCa.BFC19B9A.Up2Date
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Application\obj\Debug\net8.0\RoutesCalculator.Application.dll
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Application\obj\Debug\net8.0\refint\RoutesCalculator.Application.dll
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Application\obj\Debug\net8.0\RoutesCalculator.Application.pdb
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Application\obj\Debug\net8.0\ref\RoutesCalculator.Application.dll

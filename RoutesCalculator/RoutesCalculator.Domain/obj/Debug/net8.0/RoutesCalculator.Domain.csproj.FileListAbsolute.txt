@@ -1,0 +1,14 @@
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\bin\Debug\net8.0\RoutesCalculator.Domain.deps.json
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\bin\Debug\net8.0\RoutesCalculator.Domain.dll
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\bin\Debug\net8.0\RoutesCalculator.Domain.pdb
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\obj\Debug\net8.0\RoutesCalculator.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\obj\Debug\net8.0\RoutesCalculator.Domain.AssemblyInfoInputs.cache
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\obj\Debug\net8.0\RoutesCalculator.Domain.AssemblyInfo.cs
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\obj\Debug\net8.0\RoutesCalculator.Domain.csproj.CoreCompileInputs.cache
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\obj\Debug\net8.0\RoutesCalculator.Domain.dll
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\obj\Debug\net8.0\refint\RoutesCalculator.Domain.dll
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\obj\Debug\net8.0\RoutesCalculator.Domain.pdb
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\obj\Debug\net8.0\ref\RoutesCalculator.Domain.dll
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\bin\Debug\net8.0\RoutesCalculator.Domain.runtimeconfig.json
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\obj\Debug\net8.0\RoutesCalculator.Domain.csproj.AssemblyReference.cache
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Domain\obj\Debug\net8.0\RoutesCalculator.Domain.genruntimeconfig.cache
