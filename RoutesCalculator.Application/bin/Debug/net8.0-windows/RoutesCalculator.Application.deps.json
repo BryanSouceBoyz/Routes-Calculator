@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "RoutesCalculator.Application/1.0.0": {
+        "dependencies": {
+          "RoutesCalculator.Domain": "1.0.0"
+        },
+        "runtime": {
+          "RoutesCalculator.Application.dll": {}
+        }
+      },
+      "RoutesCalculator.Domain/1.0.0": {
+        "runtime": {
+          "RoutesCalculator.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RoutesCalculator.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RoutesCalculator.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
