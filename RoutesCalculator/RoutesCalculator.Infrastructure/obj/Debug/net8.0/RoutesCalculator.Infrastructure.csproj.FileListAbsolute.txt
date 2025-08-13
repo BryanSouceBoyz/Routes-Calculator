@@ -1,0 +1,14 @@
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Infrastructure\bin\Debug\net8.0\RoutesCalculator.Infrastructure.deps.json
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Infrastructure\bin\Debug\net8.0\RoutesCalculator.Infrastructure.runtimeconfig.json
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Infrastructure\bin\Debug\net8.0\RoutesCalculator.Infrastructure.dll
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Infrastructure\bin\Debug\net8.0\RoutesCalculator.Infrastructure.pdb
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Infrastructure\obj\Debug\net8.0\RoutesCalculator.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Infrastructure\obj\Debug\net8.0\RoutesCalculator.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Infrastructure\obj\Debug\net8.0\RoutesCalculator.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Infrastructure\obj\Debug\net8.0\RoutesCalculator.Infrastructure.AssemblyInfo.cs
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Infrastructure\obj\Debug\net8.0\RoutesCalculator.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Infrastructure\obj\Debug\net8.0\RoutesCalculator.Infrastructure.dll
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Infrastructure\obj\Debug\net8.0\refint\RoutesCalculator.Infrastructure.dll
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Infrastructure\obj\Debug\net8.0\RoutesCalculator.Infrastructure.pdb
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Infrastructure\obj\Debug\net8.0\RoutesCalculator.Infrastructure.genruntimeconfig.cache
+C:\Users\bryan\Desktop\PRACTICAS ITLA2\PROGRAMACION 2\RoutesCalculator\RoutesCalculator.Infrastructure\obj\Debug\net8.0\ref\RoutesCalculator.Infrastructure.dll
