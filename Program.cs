@@ -7,7 +7,7 @@ using RoutesCalculator.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+// --- CORS ---
 const string CorsPolicy = "_allowLocal";
 builder.Services.AddCors(options =>
 {
@@ -15,18 +15,24 @@ builder.Services.AddCors(options =>
     {
         if (builder.Environment.IsDevelopment())
         {
-
-            policy.WithOrigins(
-                    "http://localhost:5500",
-                    "http://127.0.0.1:5500"
-                )
+            // Opci贸n 1 (c贸moda): permitir todo en desarrollo
+            policy
+                .SetIsOriginAllowed(_ => true) // cualquier origen
                 .AllowAnyHeader()
                 .AllowAnyMethod();
 
+            // Opci贸n 2 (estricta): comenta lo de arriba y deja or铆genes concretos
+            //policy.WithOrigins(
+            //        "http://localhost:5500",
+            //        "http://127.0.0.1:5500",
+            //        "https://localhost:5500"    // por si tu server dev usa https
+            //    )
+            //    .AllowAnyHeader()
+            //    .AllowAnyMethod();
         }
         else
         {
-
+            // Producci贸n: solo or铆genes configurados
             var allowed = builder.Configuration
                 .GetSection("Cors:AllowedOrigins")
                 .Get<string[]>() ?? Array.Empty<string>();
@@ -37,16 +43,15 @@ builder.Services.AddCors(options =>
                       .AllowAnyHeader()
                       .AllowAnyMethod();
             }
-
         }
     });
 });
 
-
+// --- DbContext ---
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
-
+// --- MVC/JSON ---
 builder.Services.AddControllers()
     .AddJsonOptions(opts =>
     {
@@ -54,7 +59,7 @@ builder.Services.AddControllers()
             new System.Text.Json.Serialization.JsonStringEnumConverter());
     });
 
-
+// --- 400 amigables ---
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
     options.InvalidModelStateResponseFactory = context =>
@@ -68,7 +73,7 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
     };
 });
 
-
+// --- Swagger ---
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -76,18 +81,17 @@ builder.Services.AddSwaggerGen(c =>
     {
         Title = "Calculadora de Rutas y Costos",
         Version = "v1",
-        Description = "Calcula costos de viaje y sugiere la opci髇 m醩 econ髆ica."
+        Description = "Calcula costos de viaje y sugiere la opci贸n m谩s econ贸mica."
     });
 });
 
-
+// --- DI ---
 builder.Services.AddScoped<ICostCalculator, PublicCarCalculator>();
 builder.Services.AddScoped<ICostCalculator, UberCalculator>();
 builder.Services.AddScoped<ICostCalculator, OwnCarCalculator>();
 builder.Services.AddScoped<ICostService, CostService>();
 
 var app = builder.Build();
-
 
 if (app.Environment.IsDevelopment())
 {
@@ -96,12 +100,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-
 app.UseCors(CorsPolicy);
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();
